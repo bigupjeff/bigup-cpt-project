@@ -1,0 +1,103 @@
+{
+	"key": "project",
+	"label": "Projects",
+	"slug": "edit.php?post_type=project",
+	"prefix": "_bigup_",
+	"metaboxID": "project-meta",
+	"definition": {
+		"labels": {
+			"name": "Projects",
+			"singular_name": "Project",
+			"add_new": "New Project",
+			"add_new_item": "Add New Project",
+			"edit_item": "Edit Project",
+			"new_item": "New Project",
+			"view_item": "View Project",
+			"search_items": "Search Projects",
+			"not_found": "No Projects Found",
+			"not_found_in_trash": "No Projects found in Trash"
+		},
+		"supports": [
+			"title",
+			"editor",
+			"thumbnail",
+			"excerpt",
+			"custom-fields"
+		],
+		"description": "A portfolio of projects.",
+		"public": true,
+		"exclude_from_search": false,
+		"publicly_queryable": true,
+		"query_var": true,
+		"show_in_menu": true,
+		"menu_position": 5,
+		"menu_icon": "dashicons-portfolio",
+		"hierarchical": false,
+		"taxonomies": [
+			"category",
+			"post_tag"
+		],
+		"show_in_rest": true,
+		"delete_with_user": false,
+		"rewrite": {
+			"slug": "projects"
+		}
+	},
+	"customFields": [
+		{
+			"block_name": "bigupweb/project-name",
+			"suffix": "_name",
+			"label": "Project Name",
+			"description": "Name of the project",
+			"type": "string",
+			"input_type": "text",
+			"placeholder": "Add a name",
+			"length_limit": "50",
+			"required": "",
+			"show_in_rest": "true",
+			"single": "true",
+			"user_capabilities": "edit_posts"
+		},
+		{
+			"block_name": "bigupweb/project-url",
+			"suffix": "_project_url",
+			"label": "Project URL",
+			"description": "Link to learn more. E.g the live project or a full blog post",
+			"type": "string",
+			"input_type": "url",
+			"placeholder": "Add a project URL",
+			"length_limit": "300",
+			"required": "",
+			"show_in_rest": "true",
+			"single": "true",
+			"user_capabilities": "edit_posts"
+		},
+		{
+			"block_name": "bigupweb/project-display-order",
+			"suffix": "_display_order",
+			"label": "Display Order",
+			"description": "Projects can be ordered using this number",
+			"type": "integer",
+			"input_type": "number",
+			"number_min": 0,
+			"number_max": 100,
+			"number_step": 1,
+			"required": "",
+			"show_in_rest": "true",
+			"single": "true",
+			"user_capabilities": "edit_posts"
+		},
+		{
+			"block_name": "bigupweb/project-featured",
+			"suffix": "_featured",
+			"label": "Featured",
+			"description": "Check to display in featured template areas",
+			"type": "boolean",
+			"input_type": "checkbox",
+			"required": "",
+			"show_in_rest": "true",
+			"single": "true",
+			"user_capabilities": "edit_posts"
+		}
+	]
+}
