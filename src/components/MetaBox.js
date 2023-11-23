@@ -48,7 +48,7 @@ const MetaBox = ( { postType, metaFields, setMetaFields } ) => {
 					title={ field.label } 
 					initialOpen={ true }
 				>
-					{ 'text' === field.type || 'url' === field.type &&
+					{ ( field.type ==='text' || field.type === 'url' ) &&
 						<PanelRow>
 							<TextControl
 								label={ field.description }
@@ -61,7 +61,7 @@ const MetaBox = ( { postType, metaFields, setMetaFields } ) => {
 							/>
 						</PanelRow>
 					}
-					{ 'number' === field.type &&
+					{ field.type === 'number' &&
 						<PanelRow>
 							<TextControl
 								label={ field.description }
@@ -74,7 +74,7 @@ const MetaBox = ( { postType, metaFields, setMetaFields } ) => {
 							/>
 						</PanelRow>
 					}
-					{ 'checkbox' === field.type &&
+					{ field.type === 'checkbox' &&
 						<PanelRow>
 							<CheckboxControl
 								label={ field.description }
