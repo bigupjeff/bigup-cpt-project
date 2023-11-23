@@ -52,22 +52,26 @@ class Editor_Gutenberg {
 
 
 	/**
-	 * Register block and metafield on the post type.
+	 * Register block and metafields on the post type.
 	 */
 	public function setup_custom_fields() {
 		foreach ( $this->custom_fields as $metafield ) {
 
-			$block_dir = CPTPRO_DIR . 'build/blocks/' . str_replace( '_', '-', $this->key . $metafield['suffix'] );
-			$result    = register_block_type_from_metadata(
-				$block_dir,
-				array(
-					'render_callback' => array( $this, 'dynamic_render_callback' ),
-				)
-			);
-			if ( false === $result ) {
-				error_log( "ERROR: Block registration failed for path '{$block_dir}'" );
+			// Register blocks (note: not all metafields have blocks).
+			if ( $metafield['block_name'] ) {
+				$block_dir = CPTPRO_DIR . 'build/blocks/' . str_replace( '_', '-', $this->key . $metafield['suffix'] );
+				$result    = register_block_type_from_metadata(
+					$block_dir,
+					array(
+						'render_callback' => array( $this, 'dynamic_render_callback' ),
+					)
+				);
+				if ( false === $result ) {
+					error_log( "ERROR: Block registration failed for path '{$block_dir}'" );
+				}
 			}
 
+			// Register metafields.
 			$user_capabilities = $metafield['user_capabilities'];
 			$sanitize_callback = Sanitize::get_callback( $metafield['input_type'] );
 			register_post_meta(
@@ -148,7 +152,7 @@ class Editor_Gutenberg {
 	 * @param array $editor_context The editor context
 	 */
 	public function allowed_block_types( $allowed_blocks, $editor_context ) {
-		$post_type = ( !! $editor_context->post ) ? $editor_context->post->post_type : false;
+		$post_type = ( ! ! $editor_context->post ) ? $editor_context->post->post_type : false;
 		if ( $post_type && $this->key === $post_type ) {
 			$allowed_blocks = array(
 				'core/paragraph',

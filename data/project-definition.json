@@ -73,7 +73,7 @@
 			"user_capabilities": "edit_posts"
 		},
 		{
-			"block_name": "bigupweb/project-sort-index",
+			"block_name": false,
 			"suffix": "_sort_index",
 			"label": "Sort Index",
 			"description": "Projects can be ordered using this number",
@@ -88,7 +88,7 @@
 			"user_capabilities": "edit_posts"
 		},
 		{
-			"block_name": "bigupweb/project-is-featured",
+			"block_name": false,
 			"suffix": "_is_featured",
 			"label": "Featured",
 			"description": "Check if the project should be used in featured template areas",
