@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import { compose } from '@wordpress/compose'
 import { withSelect, withDispatch } from '@wordpress/data'
 import { PluginDocumentSettingPanel } from '@wordpress/edit-post'
-import { PanelRow, TextControl } from '@wordpress/components'
-import json from '../../data/review-definition'
+import { PanelRow, TextControl, CheckboxControl } from '@wordpress/components'
+import json from '../../data/project-definition'
 const { label, prefix, key, customFields } = json
 
 
@@ -33,6 +33,9 @@ const MetaBox = ( { postType, metaFields, setMetaFields } ) => {
 			'placeholder': customField.placeholder,
 			'required': customField.required,
 			'maxlength': customField.length_limit,
+			'min': customField.number_min ?? '',
+			'max': customField.number_max ?? '',
+			'step': customField.number_step ?? '',
 		} )
 	} )
 
@@ -45,6 +48,7 @@ const MetaBox = ( { postType, metaFields, setMetaFields } ) => {
 					title={ field.label } 
 					initialOpen={ true }
 				>
+					{ 'text' === field.type || 'url' === field.type &&
 						<PanelRow>
 							<TextControl
 								label={ field.description }
@@ -56,6 +60,29 @@ const MetaBox = ( { postType, metaFields, setMetaFields } ) => {
 								maxLength={ field.maxlength }
 							/>
 						</PanelRow>
+					}
+					{ 'number' === field.type &&
+						<PanelRow>
+							<TextControl
+								label={ field.description }
+								value={ field.value }
+								onChange={ field.updateValue }
+								type={ field.type }
+								min={ field.number_min }
+								max={ field.number_max }
+								step={ field.number_step }
+							/>
+						</PanelRow>
+					}
+					{ 'checkbox' === field.type &&
+						<PanelRow>
+							<CheckboxControl
+								label={ field.description }
+								checked={ field.value }
+								onChange={ field.updateValue }
+							/>
+						</PanelRow>
+					}
 				</PluginDocumentSettingPanel>
 			) ) }
 		</>

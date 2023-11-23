@@ -73,20 +73,12 @@ export default function Edit( {
 							<a
 								href={ postEditUri }
 							>
-								{ __( 'Edit this project to set the name' ) }
+								{ __( 'Edit this project to set it as featured' ) }
 							</a>
 						</PanelRow>
 					</PanelBody>
 				</InspectorControls>
 			}
-
-			<div { ...blockProps }>
-				<p>
-					<em>
-						{ field.value ?? field.placeholder }
-					</em>
-				</p>
-			</div>
 		</>
 	)
 }

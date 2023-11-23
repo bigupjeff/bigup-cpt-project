@@ -1,13 +1,13 @@
 {
 	"$schema": "https://json.schemastore.org/block.json",
 	"apiVersion": 2,
-	"name": "bigupweb/project-name",
+	"name": "bigupweb/project-is-featured",
 	"version": "0.1.0",
-	"title": "Project Name",
+	"title": "Featured",
 	"category": "theme",
 	"icon": "portfolio",
-	"description": "Name of the project",
+	"description": "Check if the project should be used in featured template areas",
 	"usesContext": [ "postId", "postType", "queryId" ],
-	"textdomain": "bigupweb-project-name",
+	"textdomain": "bigupweb-project-is-featured",
 	"editorScript": "file:./index.js"
 }

@@ -60,7 +60,7 @@
 		},
 		{
 			"block_name": "bigupweb/project-url",
-			"suffix": "_project_url",
+			"suffix": "_url",
 			"label": "Project URL",
 			"description": "Link to learn more. E.g the live project or a full blog post",
 			"type": "string",
@@ -73,9 +73,9 @@
 			"user_capabilities": "edit_posts"
 		},
 		{
-			"block_name": "bigupweb/project-display-order",
-			"suffix": "_display_order",
-			"label": "Display Order",
+			"block_name": "bigupweb/project-sort-index",
+			"suffix": "_sort_index",
+			"label": "Sort Index",
 			"description": "Projects can be ordered using this number",
 			"type": "integer",
 			"input_type": "number",
@@ -88,10 +88,10 @@
 			"user_capabilities": "edit_posts"
 		},
 		{
-			"block_name": "bigupweb/project-featured",
-			"suffix": "_featured",
+			"block_name": "bigupweb/project-is-featured",
+			"suffix": "_is_featured",
 			"label": "Featured",
-			"description": "Check to display in featured template areas",
+			"description": "Check if the project should be used in featured template areas",
 			"type": "boolean",
 			"input_type": "checkbox",
 			"required": "",

@@ -1,22 +1,19 @@
 {
 	"$schema": "https://json.schemastore.org/block.json",
 	"apiVersion": 2,
-	"name": "bigupweb/review-source-url",
+	"name": "bigupweb/project-url",
 	"version": "0.1.0",
-	"title": "Review Source URL",
+	"title": "Project URL",
 	"category": "theme",
-	"icon": "smiley",
-	"description": "Source URL custom field for the 'Review' custom post type",
+	"icon": "portfolio",
+	"description": "Link to learn more. E.g the live project or a full blog post",
 	"usesContext": [ "postId", "postType", "queryId" ],
-	"supports": {
-		"html": false
-	},
-	"textdomain": "bigupweb-review-source-url",
+	"textdomain": "bigupweb-project-url",
 	"editorScript": "file:./index.js",
 	"attributes": {
 		"linkText": {
 			"type": "string",
-			"default": "See review source"
+			"default": "See the live project"
 		}
 	}
 }

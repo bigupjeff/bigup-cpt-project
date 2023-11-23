@@ -5,7 +5,7 @@ import { useSelect } from '@wordpress/data'
 import { useEntityProp } from '@wordpress/core-data'
 import { useBlockProps, InspectorControls } from '@wordpress/block-editor'
 import metadata from './block.json'
-import json from '../../../data/review-definition'
+import json from '../../../data/project-definition'
 const { prefix, key, customFields } = json
 
 /**
@@ -88,7 +88,7 @@ export default function Edit( {
 							<a
 								href={ postEditUri }
 							>
-								{ __( 'Edit this review to set the URL' ) }
+								{ __( 'Edit this project to set the URL' ) }
 							</a>
 						</PanelRow>
 					</PanelBody>

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json.schemastore.org/block.json",
+  "apiVersion": 2,
+  "name": "bigupweb/project-name",
+  "version": "0.1.0",
+  "title": "Project Name",
+  "category": "theme",
+  "icon": "portfolio",
+  "description": "Name of the project",
+  "usesContext": [
+    "postId",
+    "postType",
+    "queryId"
+  ],
+  "textdomain": "bigupweb-project-name",
+  "editorScript": "file:./index.js"
+}

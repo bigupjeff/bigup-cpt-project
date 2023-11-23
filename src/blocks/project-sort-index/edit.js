@@ -73,7 +73,7 @@ export default function Edit( {
 							<a
 								href={ postEditUri }
 							>
-								{ __( 'Edit this project to set the name' ) }
+								{ __( 'Edit this project to edit the sort index' ) }
 							</a>
 						</PanelRow>
 					</PanelBody>
@@ -83,7 +83,7 @@ export default function Edit( {
 			<div { ...blockProps }>
 				<p>
 					<em>
-						{ field.value ?? field.placeholder }
+						{ field.value }
 					</em>
 				</p>
 			</div>

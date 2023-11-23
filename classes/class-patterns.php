@@ -58,9 +58,12 @@ class Patterns {
 			),
 		);
 
-		$files = scandir( CPTPRO_DIR . 'patterns' ); 
-		$filenames = preg_replace( '/\..*/', '', $files );
-		$this->patterns = array_filter( $filenames );
+		$path = CPTPRO_DIR . 'patterns';
+		$files = ( file_exists( $path ) ) ? scandir( $path ) : array();
+		if ( is_array( $files ) ) {
+			$filenames = preg_replace( '/\..*/', '', $files );
+			$this->patterns = array_filter( $filenames );
+		}
 	}
 
 
